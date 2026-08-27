@@ -1,20 +1,34 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Menu as MenuIcon, X as CloseIcon } from 'lucide-react';
 import { FadeIn } from '@/components/ui/fade-in';
 import { menuData } from '@/data/menu';
 import { Logo } from '@/components/Logo';
 
 // Real photos
-import heroImg from '@/assets/real/hero-b.jpg';
+import heroImg from '@/assets/real/hero-new.jpg';
+import woodBg from '@/assets/wood-bg.png';
+import heroVideo from '@/assets/hero.mp4';
 import atmosphereImg from '@/assets/real/interior-d.jpg';
-import chefImg from '@/assets/real/chef-b.jpg';
-import noodlePullImg from '@/assets/real/noodle-a.jpg';
+import chefImg from '@/assets/real/chef-new.jpg';
+import noodlePullImg from '@/assets/real/noodle-bundles.jpg';
 import gyozaImg from '@/assets/real/gyoza-c.jpg';
+
+// Gallery photos (compressed copies of the /real originals, sized for grid thumbnails)
+import galleryMisoLobster from '@/assets/gallery/bowl-miso-lobster.jpg';
+import galleryTruffle from '@/assets/gallery/bowl-truffle.jpg';
+import galleryVegan from '@/assets/gallery/bowl-vegan.jpg';
+import galleryTonkotsu from '@/assets/gallery/bowl-tonkotsu.jpg';
+import galleryElk from '@/assets/gallery/bowl-elk.jpg';
+import galleryBowlShoyu from '@/assets/gallery/bowl-shoyu.jpg';
+import galleryBowlIekei from '@/assets/gallery/bowl-iekei.jpg';
+import galleryBowlShio from '@/assets/gallery/bowl-shio.jpg';
 
 export default function Home() {
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 1000], [0, 300]);
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   // Smooth scroll for nav links
   const scrollTo = (id: string) => {
@@ -22,23 +36,78 @@ export default function Home() {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
+    setMobileMenuOpen(false);
   };
+
+  const navLinks = [
+    { id: 'philosophy', label: 'Devotion' },
+    { id: 'gallery', label: 'Gallery' },
+    { id: 'menu', label: 'Menu' },
+    { id: 'visit', label: 'Visit' },
+  ];
+
+  // TODO: the Reserve button currently scrolls to the Visit section as a placeholder.
+  // Swap onClick for a real reservation link (OpenTable, Resy, Toast, etc.)
+  // or a tel: link once the client decides how they're taking reservations.
 
   return (
     <div className="bg-background min-h-screen text-foreground overflow-hidden selection:bg-white/20 selection:text-white">
-      
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 mix-blend-difference text-white">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('hero')}>
           <Logo className="w-8 h-8" />
           <span className="font-serif tracking-widest text-sm uppercase hidden sm:block">Ichizu</span>
         </div>
-        <div className="flex gap-6 text-xs tracking-widest uppercase font-sans">
-          <button onClick={() => scrollTo('philosophy')} className="hover:text-white/60 transition-colors">Devotion</button>
-          <button onClick={() => scrollTo('menu')} className="hover:text-white/60 transition-colors">Menu</button>
-          <button onClick={() => scrollTo('visit')} className="hover:text-white/60 transition-colors">Visit</button>
+
+        {/* Desktop links (sm and up) */}
+        <div className="hidden sm:flex gap-6 text-xs tracking-widest uppercase font-sans items-center">
+          {navLinks.map((link) => (
+            <button key={link.id} onClick={() => scrollTo(link.id)} className="hover:text-white/60 transition-colors">
+              {link.label}
+            </button>
+          ))}
+          <button
+            onClick={() => scrollTo('visit')}
+            className="border border-white/40 rounded-full px-4 py-1.5 normal-case tracking-normal font-sans text-xs hover:bg-white hover:text-black transition-colors"
+          >
+            Reserve
+          </button>
+        </div>
+
+        {/* Mobile controls (below sm): Reserve button + hamburger toggle */}
+        <div className="flex sm:hidden items-center gap-3 text-xs tracking-widest uppercase font-sans">
+          <button
+            onClick={() => scrollTo('visit')}
+            className="border border-white/40 rounded-full px-3 py-1.5 normal-case tracking-normal font-sans text-xs hover:bg-white hover:text-black transition-colors"
+          >
+            Reserve
+          </button>
+          <button
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+            className="p-1"
+          >
+            {mobileMenuOpen ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+          </button>
         </div>
       </nav>
+
+      {/* Mobile menu panel */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-background/98 backdrop-blur-sm flex flex-col items-center justify-center gap-10 sm:hidden">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
+              className="font-serif text-3xl text-white/90 hover:text-white transition-colors"
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Hero Section */}
       <section id="hero" className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden">
@@ -48,21 +117,20 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-black/60 z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-          <img 
-            src={heroImg} 
-            alt="Ramen overhead view" 
+          <video
+            src={heroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={heroImg}
             className="w-full h-full object-cover object-center"
-            fetchPriority="high"
-            decoding="async"
           />
         </motion.div>
 
         <div className="relative z-20 text-center flex flex-col items-center">
           <FadeIn delay={0.2} direction="down">
             <div className="relative">
-              <div className="absolute -left-16 md:-left-24 top-4 md:top-12 w-8 h-8 md:w-12 md:h-12 border border-red-900/40 rounded-full flex items-center justify-center">
-                <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-red-900/60 rounded-full" />
-              </div>
               <h1 className="text-8xl md:text-[12rem] font-serif leading-none tracking-tight text-white/90 font-light mb-4 flex items-center gap-4 drop-shadow-2xl">
                 一途
               </h1>
@@ -80,8 +148,13 @@ export default function Home() {
       </section>
 
       {/* Philosophy Section */}
-      <section id="philosophy" className="py-32 px-6 relative">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <section id="philosophy" className="py-32 px-6 relative overflow-hidden">
+        {/* Wood texture background */}
+        <div className="absolute inset-0 z-0">
+          <img src={woodBg} alt="" className="w-full h-full object-cover" aria-hidden="true" />
+          <div className="absolute inset-0 bg-black/80" />
+        </div>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
           <div>
             <FadeIn>
               <h2 className="text-3xl md:text-5xl font-serif mb-8 leading-tight">
@@ -103,8 +176,8 @@ export default function Home() {
               </div>
             </FadeIn>
           </div>
-          <FadeIn direction="left" delay={0.3} className="relative h-[60vh] md:h-[80vh]">
-            <img src={noodlePullImg} alt="Noodle Pull" className="w-full h-full object-cover filter grayscale-[20%]" loading="lazy" decoding="async" />
+          <FadeIn direction="left" delay={0.3} className="relative h-[60vh] md:h-[80vh] overflow-hidden">
+            <img src={noodlePullImg} alt="Hand-pulled house-made ramen noodles at Ramen Ichizu Bar" className="w-full h-full object-cover object-center scale-125 filter grayscale-[20%]" loading="lazy" decoding="async" />
             <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
           </FadeIn>
         </div>
@@ -144,11 +217,44 @@ export default function Home() {
           viewport={{ once: true }}
           className="w-full h-full"
         >
-          <img src={atmosphereImg} alt="Restaurant Atmosphere" className="w-full h-full object-cover opacity-60" loading="lazy" decoding="async" />
+          <img src={atmosphereImg} alt="Interior dining room at Ramen Ichizu Bar in Salt Lake City's Central Ninth" className="w-full h-full object-cover opacity-60" loading="lazy" decoding="async" />
           <div className="absolute inset-0 flex items-center justify-center">
             <p className="font-serif text-2xl md:text-4xl tracking-widest text-white/90">915 WASHINGTON ST</p>
           </div>
         </motion.div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="py-32 px-6 max-w-6xl mx-auto">
+        <FadeIn className="text-center mb-20">
+          <h2 className="text-5xl font-serif mb-4">Gallery</h2>
+          <div className="w-8 h-[1px] bg-white/20 mx-auto" />
+        </FadeIn>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {[
+            { src: galleryBowlShoyu,   alt: "Shoyu ramen bowl at Ramen Ichizu Bar",        scale: "scale-150", pos: "object-[center_60%]" },
+            { src: galleryBowlIekei,   alt: "Yokohama Iekei ramen at Ramen Ichizu Bar",    scale: "scale-110", pos: "object-center" },
+            { src: galleryBowlShio,    alt: "Shio Supreme ramen at Ramen Ichizu Bar",       scale: "scale-110", pos: "object-center" },
+            { src: galleryMisoLobster, alt: "Miso Lobster Ramen at Ramen Ichizu Bar",       scale: "scale-110", pos: "object-center" },
+            { src: galleryTruffle,     alt: "Truffle ramen special at Ramen Ichizu Bar",    scale: "scale-110", pos: "object-center" },
+            { src: galleryVegan,       alt: "Vegan ramen special at Ramen Ichizu Bar",      scale: "scale-110", pos: "object-center" },
+            { src: galleryTonkotsu,    alt: "Gyokai Tonkotsu at Ramen Ichizu Bar",          scale: "scale-110", pos: "object-center" },
+            { src: galleryElk,         alt: "Elk Ramen special at Ramen Ichizu Bar",        scale: "scale-110", pos: "object-center" },
+          ].map(({ src, alt, scale, pos }, i) => (
+            <FadeIn key={alt} delay={0.05 * (i % 4 + 1)}>
+              <div className="overflow-hidden ring-1 ring-inset ring-white/10">
+                <img
+                  src={src}
+                  alt={alt}
+                  className={`w-full aspect-square object-cover ${scale} ${pos} transition-transform duration-700 ease-out hover:scale-125`}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </section>
 
       {/* Menu Section */}

@@ -36,12 +36,22 @@
 
     <!-- ═══ Google Analytics 4 ════════════════════════════════════════════════ -->
     <!-- Google Analytics 4 Measurement ID: G-B5BQ9J2SD0 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5BQ9J2SD0"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-B5BQ9J2SD0');
+      if (window.self === window.top) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+          window.dataLayer.push(arguments);
+        };
+
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-B5BQ9J2SD0');
+
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src =
+          'https://www.googletagmanager.com/gtag/js?id=G-B5BQ9J2SD0';
+        document.head.appendChild(gaScript);
+      }
     </script>
 
     <!-- ═══ Restaurant JSON-LD Structured Data ═══════════════════════════════ -->

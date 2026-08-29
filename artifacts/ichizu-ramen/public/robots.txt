@@ -1,5 +1,3 @@
+# Crawling is blocked until the final domain launches.
 User-agent: *
-Allow: /
-
-# UPDATE: replace with your actual domain
-Sitemap: https://www.ramenichizubar.com/sitemap.xml
+Disallow: /

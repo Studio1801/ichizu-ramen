@@ -130,13 +130,11 @@ export default function Home() {
         </motion.div>
 
         <div className="relative z-20 text-center flex flex-col items-center">
-          <FadeIn delay={0.2} direction="down">
-            <div className="relative">
-              <h1 className="text-8xl md:text-[12rem] font-serif leading-none tracking-tight text-white/90 font-light mb-4 flex items-center gap-4 drop-shadow-2xl">
-                一途
-              </h1>
-            </div>
-          </FadeIn>
+          <div className="relative">
+            <h1 className="text-8xl md:text-[12rem] font-serif leading-none tracking-tight text-white/90 font-light mb-4 flex items-center gap-4 drop-shadow-2xl">
+              一途
+            </h1>
+          </div>
           <FadeIn delay={0.4} direction="up">
             <p className="font-sans uppercase tracking-[0.4em] text-sm md:text-base text-white/70">
               Single-Minded Devotion

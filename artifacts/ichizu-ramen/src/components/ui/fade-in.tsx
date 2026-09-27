@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { m } from 'framer-motion';
+import * as m from 'framer-motion/m';
 
 interface FadeInProps {
   children: ReactNode;

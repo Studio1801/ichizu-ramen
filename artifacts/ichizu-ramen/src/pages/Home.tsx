@@ -10,8 +10,8 @@ import heroImg from '@/assets/real/hero-new.jpg';
 import woodBg from '@/assets/wood-bg.webp';
 import heroVideo from '@/assets/hero.mp4';
 import atmosphereImg from '@/assets/real/interior-d.jpg';
-import chefImg from '@/assets/real/chef-new.jpg';
-import noodlePullImg from '@/assets/real/noodle-bundles.jpg';
+import chefImg from '@/assets/real/chef-new.webp';
+import noodlePullImg from '@/assets/real/noodle-bundles.webp';
 import gyozaImg from '@/assets/real/gyoza-c.jpg';
 
 // Gallery photos (compressed copies of the /real originals, sized for grid thumbnails)

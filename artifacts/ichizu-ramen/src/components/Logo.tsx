@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import logoSrc from '@/assets/logo.png';
+import logoSrc from '@/assets/logo.webp';
 
 export const Logo: FC<{ className?: string }> = ({ className = "w-10 h-10" }) => (
   <img

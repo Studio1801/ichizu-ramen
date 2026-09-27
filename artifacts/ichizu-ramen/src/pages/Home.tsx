@@ -7,7 +7,7 @@ import { Logo } from '@/components/Logo';
 
 // Real photos
 import heroImg from '@/assets/real/hero-new.jpg';
-import woodBg from '@/assets/wood-bg.png';
+import woodBg from '@/assets/wood-bg.webp';
 import heroVideo from '@/assets/hero.mp4';
 import atmosphereImg from '@/assets/real/interior-d.jpg';
 import chefImg from '@/assets/real/chef-new.jpg';

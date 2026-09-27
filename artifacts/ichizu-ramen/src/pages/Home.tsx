@@ -203,7 +203,7 @@ export default function Home() {
             </FadeIn>
           </div>
           <FadeIn direction="right" delay={0.3} className="flex-1 w-full aspect-square md:aspect-[3/4]">
-            <img src={chefImg} alt="Chef at work" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            <img src={chefImg} alt="Chef Mike Harrison preparing ramen at Ramen Ichizu Bar" className="w-full h-full object-cover" loading="lazy" decoding="async" />
           </FadeIn>
         </div>
       </section>

@@ -119,6 +119,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
           <video
             src={heroVideo}
+            preload="metadata"
             autoPlay
             muted
             loop

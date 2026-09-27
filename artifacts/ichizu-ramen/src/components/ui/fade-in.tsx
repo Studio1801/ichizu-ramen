@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import { m } from 'framer-motion';
 
 interface FadeInProps {
   children: ReactNode;
@@ -28,7 +27,7 @@ export function FadeIn({
   };
 
   return (
-    <motion.div
+    <m.div
       initial={{
         opacity: 0,
         ...directions[direction],
@@ -44,9 +43,9 @@ export function FadeIn({
         delay: delay,
         ease: [0.21, 0.47, 0.32, 0.98],
       }}
-      className={cn(fullWidth ? 'w-full' : '', className)}
+      className={fullWidth ? `w-full${className ? ` ${className}` : ''}` : className}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import { Menu as MenuIcon, X as CloseIcon } from 'lucide-react';
 import { FadeIn } from '@/components/ui/fade-in';
 import { menuData } from '@/data/menu';
@@ -111,7 +111,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="hero" className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden">
-        <motion.div 
+        <m.div
           style={{ y: heroY, opacity: heroOpacity }}
           className="absolute inset-0 w-full h-full"
         >
@@ -127,7 +127,7 @@ export default function Home() {
             poster={heroImg}
             className="w-full h-full object-cover object-center"
           />
-        </motion.div>
+        </m.div>
 
         <div className="relative z-20 text-center flex flex-col items-center">
           <div className="relative">
@@ -209,7 +209,7 @@ export default function Home() {
 
       {/* Interstitial Image */}
       <section className="h-[70vh] w-full relative">
-        <motion.div 
+        <m.div
           initial={{ scale: 1.1 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 1.5 }}
@@ -220,7 +220,7 @@ export default function Home() {
           <div className="absolute inset-0 flex items-center justify-center">
             <p className="font-serif text-2xl md:text-4xl tracking-widest text-white/90">915 WASHINGTON ST</p>
           </div>
-        </motion.div>
+        </m.div>
       </section>
 
       {/* Gallery Section */}

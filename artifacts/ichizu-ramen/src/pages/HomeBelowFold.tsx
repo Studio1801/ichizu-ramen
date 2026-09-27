@@ -125,11 +125,11 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             { src: galleryElk, alt: "Elk Ramen special at Ramen Ichizu Bar", scale: "scale-110", pos: "object-center" },
           ].map(({ src, alt, scale, pos }, i) => (
             <FadeIn key={alt} delay={0.05 * (i % 4 + 1)}>
-              <div className="overflow-hidden ring-1 ring-inset ring-white/10">
+              <div className="aspect-square overflow-hidden ring-1 ring-inset ring-white/10">
                 <img
                   src={src}
                   alt={alt}
-                  className={`w-full aspect-square object-cover ${scale} ${pos} transition-transform duration-700 ease-out hover:scale-125`}
+                  className={`w-full h-full object-cover ${scale} ${pos} transition-transform duration-700 ease-out hover:scale-125`}
                   loading="lazy"
                   decoding="async"
                 />

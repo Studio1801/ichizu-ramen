@@ -1,4 +1,4 @@
-const CONTACT_EMAIL = "REPLACE_ME@example.com";
+const CONTACT_EMAIL = "PUT_REAL_EMAIL_HERE";
 
 import { useEffect } from 'react';
 
@@ -77,7 +77,7 @@ export default function Privacy() {
             </p>
           </section>
 
-          <p className="text-sm text-white/50">Last updated: October 5, 2026</p>
+          <p className="text-sm text-white/50">Last updated: October 4, 2026</p>
         </div>
       </article>
     </main>

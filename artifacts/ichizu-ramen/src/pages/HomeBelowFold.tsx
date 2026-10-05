@@ -200,10 +200,10 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             <FadeIn delay={0.2}>
               <h4 className="font-serif text-xl mb-4">Hours</h4>
               <ul className="text-muted-foreground space-y-2">
-                <li><span className="text-white/60">Mon, Wed, Thu</span><br />11:30AM–3PM / 5PM–9PM</li>
-                <li><span className="text-white/60">Fri–Sat</span><br />11:30AM–3PM / 5PM–9:30PM</li>
-                <li><span className="text-white/60">Sun</span><br />12PM–8PM</li>
-                <li><span className="text-white/60">Tue</span><br />Closed</li>
+                <li><span className="text-white/60">Mon, Wed, Thu</span><br />12PM–2:30PM / 5PM–9PM</li>
+                <li><span className="text-white/60">Tue</span><br />12PM–2:30PM (lunch only)</li>
+                <li><span className="text-white/60">Fri–Sat</span><br />12PM–12AM</li>
+                <li><span className="text-white/60">Sun</span><br />12PM–9PM</li>
               </ul>
             </FadeIn>
 

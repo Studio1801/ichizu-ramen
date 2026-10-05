@@ -5,7 +5,7 @@ import { Logo } from '@/components/Logo';
 import { menuData } from '@/data/menu';
 
 import woodBg from '@/assets/wood-bg.webp';
-import atmosphereImg from '@/assets/real/interior-d.jpg';
+import atmosphereImg from '@/assets/real/interior-c.jpg';
 import chefImg from '@/assets/real/chef-new.webp';
 import noodlePullImg from '@/assets/real/noodle-bundles.webp';
 import gyozaImg from '@/assets/real/gyoza-c.jpg';
@@ -92,14 +92,8 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
 
       {/* Interstitial Image */}
       <section className="h-[70vh] w-full relative">
-        <m.div
-          initial={{ scale: 1.1 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 1.5 }}
-          viewport={{ once: true }}
-          className="w-full h-full"
-        >
-          <img src={atmosphereImg} alt="Interior dining room at Ramen Ichizu &amp; Bar in Salt Lake City's Central Ninth" className="w-full h-full object-cover opacity-60" loading="lazy" decoding="async" />
+        <m.div className="w-full h-full">
+          <img src={atmosphereImg} alt="Interior dining room at Ramen Ichizu &amp; Bar in Salt Lake City's Central Ninth" className="w-full h-full object-cover object-[50%_35%] opacity-60" loading="lazy" decoding="async" />
           <div className="absolute inset-0 flex items-center justify-center">
             <p className="font-serif text-2xl md:text-4xl tracking-widest text-white/90">915 WASHINGTON ST</p>
           </div>

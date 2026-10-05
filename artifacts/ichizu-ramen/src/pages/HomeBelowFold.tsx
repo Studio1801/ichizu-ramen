@@ -134,13 +134,16 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="py-32 px-6 max-w-5xl mx-auto">
+      <section id="menu" className="py-32 px-6 max-w-5xl md:max-w-6xl mx-auto">
         <FadeIn className="text-center mb-24">
           <h2 className="text-5xl font-serif mb-4">The Menu</h2>
+          <p className="hidden md:block text-center font-serif italic text-white/50 md:text-lg mb-3">
+            Noodles made in-house daily.
+          </p>
           <div className="w-8 h-[1px] bg-white/20 mx-auto" />
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-x-24 gap-y-20">
+        <div className="grid md:grid-cols-2 gap-x-24 md:gap-x-28 gap-y-20">
           <div className="space-y-16">
             <MenuCategory title="Ramen" items={menuData.ramen} featured />
             <MenuCategory title="Seasonal" items={menuData.seasonal} featured />
@@ -235,7 +238,7 @@ function MenuCategory({ title, items, compact = false, featured = false }: { tit
   return (
     <FadeIn>
       <div className="mb-10 group">
-        <h3 className="font-serif text-2xl mb-8 flex items-center gap-4">
+        <h3 className="font-serif text-2xl md:text-3xl mb-8 flex items-center gap-4">
           <span className="relative">
             {title}
             <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-1 bg-red-900/0 group-hover:bg-red-900/60 rounded-full transition-colors duration-500" />
@@ -247,18 +250,18 @@ function MenuCategory({ title, items, compact = false, featured = false }: { tit
             <div key={i} className="flex flex-col group/menu-item">
               <div className="flex items-baseline font-sans text-sm md:text-base">
                 <div className="flex min-w-0 items-baseline">
-                  <span className={`font-medium tracking-wide text-white/90 transition-colors duration-300 group-hover/menu-item:text-white ${featured ? 'font-serif text-lg md:text-xl' : ''}`}>
+                  <span className={`font-medium tracking-wide text-white/90 transition-colors duration-300 group-hover/menu-item:text-white ${featured ? 'font-serif text-lg md:text-2xl' : ''}`}>
                     {item.name}
                   </span>
                   {item.note && (
-                    <span className="ml-2 text-[10px] italic lowercase text-red-400/70">{item.note}</span>
+                    <span className="ml-2 text-[10px] italic lowercase text-red-400/70 md:text-xs md:text-red-400/90">{item.note}</span>
                   )}
                 </div>
-                <div aria-hidden="true" className="mx-2 min-w-3 flex-1 self-baseline border-b border-dotted border-white/15 transition-colors duration-300 group-hover/menu-item:border-white/30" />
-                <span className="text-white/60 tabular-nums">${item.price}</span>
+                <div aria-hidden="true" className="mx-2 min-w-3 flex-1 self-baseline border-b border-dotted border-white/15 md:border-white/25 transition-colors duration-300 group-hover/menu-item:border-white/30" />
+                <span className={`text-white/60 tabular-nums ${featured ? 'md:font-serif md:text-xl' : ''}`}>${item.price}</span>
               </div>
               {!compact && item.desc && (
-                <p className="text-xs md:text-sm text-muted-foreground mt-2 leading-relaxed max-w-[85%]">
+                <p className="text-xs md:text-[15px] text-muted-foreground mt-2 leading-relaxed max-w-[85%] md:max-w-[92%] md:transition-colors md:duration-300 md:group-hover/menu-item:text-white/70">
                   {item.desc}
                 </p>
               )}

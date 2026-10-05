@@ -43,7 +43,8 @@ export default function Privacy() {
             <h2 className="mb-2 font-serif text-2xl text-white">Third-party links</h2>
             <p>
               This site links to third-party services, including Google Maps and Instagram.
-              Those services have their own privacy policies.
+              Those services have their own privacy policies. The map on this site is provided by Google Maps,
+              which may set cookies and receive your IP address when it loads.
             </p>
           </section>
 
@@ -77,7 +78,7 @@ export default function Privacy() {
             </p>
           </section>
 
-          <p className="text-sm text-white/50">Last updated: October 4, 2026</p>
+          <p className="text-sm text-white/50">Last updated: October 5, 2026</p>
         </div>
       </article>
     </main>

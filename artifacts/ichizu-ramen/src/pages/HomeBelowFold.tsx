@@ -3,6 +3,7 @@ import * as m from 'framer-motion/m';
 import { FadeIn } from '@/components/ui/fade-in';
 import { Logo } from '@/components/Logo';
 import { menuData } from '@/data/menu';
+import { reviews } from '@/data/reviews';
 
 import woodBg from '@/assets/wood-bg.webp';
 import atmosphereImg from '@/assets/real/interior-c.jpg';
@@ -206,9 +207,6 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
 
             <FadeIn delay={0.3}>
               <h4 className="font-serif text-xl mb-4">Connect</h4>
-              <p className="text-muted-foreground mb-4">
-                4.4/5 on Google (460+ Reviews)
-              </p>
               <a
                 href="https://www.instagram.com/ramen_ichizu/"
                 target="_blank"
@@ -219,6 +217,70 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
               </a>
             </FadeIn>
           </div>
+        </div>
+
+        <div className="mx-auto mt-20 w-full max-w-4xl text-center">
+          <div className="h-72 md:h-96">
+            <iframe
+              src="https://www.google.com/maps?q=915+Washington+St+Salt+Lake+City+UT+84101&output=embed"
+              title="Map showing Ramen Ichizu & Bar at 915 Washington St, Salt Lake City"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full border-0"
+              style={{ filter: 'invert(92%) hue-rotate(180deg) contrast(0.9) saturate(0.6)' }}
+            />
+          </div>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=915+Washington+St+Salt+Lake+City+UT+84101"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-block underline underline-offset-4 decoration-white/30 hover:decoration-white"
+          >
+            Get directions
+          </a>
+        </div>
+
+        <div className="mx-auto mt-24 max-w-4xl text-center">
+          <p className="font-serif text-7xl md:text-8xl">4.4</p>
+          <div className="mt-3 flex justify-center gap-1" role="img" aria-label="4.4 out of 5 stars">
+            {Array.from({ length: 5 }, (_, index) => (
+              <svg key={index} aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5">
+                {index === 4 && (
+                  <defs>
+                    <linearGradient id="google-review-partial-star" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="40%" stopColor="#C6A56B" />
+                      <stop offset="40%" stopColor="#C6A56B" stopOpacity="0.25" />
+                      <stop offset="100%" stopColor="#C6A56B" stopOpacity="0.25" />
+                    </linearGradient>
+                  </defs>
+                )}
+                <path
+                  d="M12 2L14.9 8.3L22 9.1L16.8 13.7L18.3 20.7L12 17.1L5.7 20.7L7.2 13.7L2 9.1L9.1 8.3L12 2Z"
+                  fill={index === 4 ? 'url(#google-review-partial-star)' : '#C6A56B'}
+                />
+              </svg>
+            ))}
+          </div>
+          <p className="mt-3 text-muted-foreground">from 460+ Google reviews</p>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Ramen+Ichizu+%26+Bar+915+Washington+St+Salt+Lake+City+UT"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 inline-block underline underline-offset-4 decoration-white/30 hover:decoration-white"
+          >
+            Read reviews on Google
+          </a>
+
+          {reviews.length > 0 && (
+            <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+              {reviews.map((review, index) => (
+                <div key={`${review.name}-${index}`}>
+                  <p className="font-serif italic text-lg text-white/80">{review.quote}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{review.name}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

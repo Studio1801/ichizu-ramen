@@ -187,6 +187,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
                   href="https://www.google.com/maps/search/?api=1&query=915+Washington+St+Salt+Lake+City+UT+84101"
                   target="_blank"
                   rel="noreferrer"
+                  className="underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
                 >
                   915 Washington St<br />
                   Suite #1A<br />
@@ -226,7 +227,11 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
 
       {/* Footer */}
       <footer className="py-8 text-center text-xs font-sans tracking-widest uppercase text-white/30 bg-[#050505]">
-        <p>&copy; {new Date().getFullYear()} Ramen Ichizu Bar. All Rights Reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} Ramen Ichizu Bar. All Rights Reserved.
+          <span aria-hidden="true"> · </span>
+          <a href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</a>
+        </p>
       </footer>
     </>
   );

@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function Privacy() {
   useEffect(() => {
-    document.title = 'Privacy Policy | Ramen Ichizu Bar';
+    document.title = 'Privacy Policy | Ramen Ichizu & Bar';
   }, []);
 
   return (
@@ -21,7 +21,7 @@ export default function Privacy() {
 
         <div className="space-y-8 text-base leading-relaxed">
           <p>
-            Ramen Ichizu Bar is located at 915 Washington St Suite #1A, Salt Lake City, UT 84101.
+            Ramen Ichizu &amp; Bar is located at 915 Washington St Suite #1A, Salt Lake City, UT 84101.
           </p>
 
           <section>

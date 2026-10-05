@@ -59,7 +59,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             </FadeIn>
           </div>
           <FadeIn direction="left" delay={0.3} className="relative h-[60vh] md:h-[80vh] overflow-hidden">
-            <img src={noodlePullImg} alt="Hand-pulled house-made ramen noodles at Ramen Ichizu Bar" className="w-full h-full object-cover object-center scale-125 filter grayscale-[20%]" loading="lazy" decoding="async" />
+            <img src={noodlePullImg} alt="Hand-pulled house-made ramen noodles at Ramen Ichizu &amp; Bar" className="w-full h-full object-cover object-center scale-125 filter grayscale-[20%]" loading="lazy" decoding="async" />
             <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
           </FadeIn>
         </div>
@@ -85,7 +85,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             </FadeIn>
           </div>
           <FadeIn direction="right" delay={0.3} className="flex-1 w-full aspect-square md:aspect-[3/4]">
-            <img src={chefImg} alt="Chef Mike Harrison preparing ramen at Ramen Ichizu Bar" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            <img src={chefImg} alt="Chef Mike Harrison preparing ramen at Ramen Ichizu &amp; Bar" className="w-full h-full object-cover" loading="lazy" decoding="async" />
           </FadeIn>
         </div>
       </section>
@@ -99,7 +99,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
           viewport={{ once: true }}
           className="w-full h-full"
         >
-          <img src={atmosphereImg} alt="Interior dining room at Ramen Ichizu Bar in Salt Lake City's Central Ninth" className="w-full h-full object-cover opacity-60" loading="lazy" decoding="async" />
+          <img src={atmosphereImg} alt="Interior dining room at Ramen Ichizu &amp; Bar in Salt Lake City's Central Ninth" className="w-full h-full object-cover opacity-60" loading="lazy" decoding="async" />
           <div className="absolute inset-0 flex items-center justify-center">
             <p className="font-serif text-2xl md:text-4xl tracking-widest text-white/90">915 WASHINGTON ST</p>
           </div>
@@ -115,14 +115,14 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            { src: galleryBowlShoyu, alt: "Shoyu ramen bowl at Ramen Ichizu Bar", scale: "scale-150", pos: "object-[center_60%]" },
-            { src: galleryBowlIekei, alt: "Yokohama Iekei ramen at Ramen Ichizu Bar", scale: "scale-110", pos: "object-center" },
-            { src: galleryBowlShio, alt: "Shio Supreme ramen at Ramen Ichizu Bar", scale: "scale-110", pos: "object-center" },
-            { src: galleryMisoLobster, alt: "Miso Lobster Ramen at Ramen Ichizu Bar", scale: "scale-110", pos: "object-center" },
-            { src: galleryTruffle, alt: "Truffle ramen special at Ramen Ichizu Bar", scale: "scale-110", pos: "object-center" },
-            { src: galleryVegan, alt: "Vegan ramen special at Ramen Ichizu Bar", scale: "scale-110", pos: "object-center" },
-            { src: galleryTonkotsu, alt: "Gyokai Tonkotsu at Ramen Ichizu Bar", scale: "scale-110", pos: "object-center" },
-            { src: galleryElk, alt: "Elk Ramen special at Ramen Ichizu Bar", scale: "scale-110", pos: "object-center" },
+            { src: galleryBowlShoyu, alt: "Shoyu ramen bowl at Ramen Ichizu & Bar", scale: "scale-150", pos: "object-[center_60%]" },
+            { src: galleryBowlIekei, alt: "Yokohama Iekei ramen at Ramen Ichizu & Bar", scale: "scale-110", pos: "object-center" },
+            { src: galleryBowlShio, alt: "Shio Supreme ramen at Ramen Ichizu & Bar", scale: "scale-110", pos: "object-center" },
+            { src: galleryMisoLobster, alt: "Miso Lobster Ramen at Ramen Ichizu & Bar", scale: "scale-110", pos: "object-center" },
+            { src: galleryTruffle, alt: "Truffle ramen special at Ramen Ichizu & Bar", scale: "scale-110", pos: "object-center" },
+            { src: galleryVegan, alt: "Vegan ramen special at Ramen Ichizu & Bar", scale: "scale-110", pos: "object-center" },
+            { src: galleryTonkotsu, alt: "Gyokai Tonkotsu at Ramen Ichizu & Bar", scale: "scale-110", pos: "object-center" },
+            { src: galleryElk, alt: "Elk Ramen special at Ramen Ichizu & Bar", scale: "scale-110", pos: "object-center" },
           ].map(({ src, alt, scale, pos }, i) => (
             <FadeIn key={alt} delay={0.05 * (i % 4 + 1)}>
               <div className="aspect-square overflow-hidden ring-1 ring-inset ring-white/10">
@@ -210,7 +210,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             <FadeIn delay={0.3}>
               <h4 className="font-serif text-xl mb-4">Connect</h4>
               <p className="text-muted-foreground mb-4">
-                4.3/5 Stars (342+ Reviews)
+                4.4/5 on Google (460+ Reviews)
               </p>
               <a
                 href="https://www.instagram.com/ramen_ichizu/"
@@ -228,7 +228,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
       {/* Footer */}
       <footer className="py-8 text-center text-xs font-sans tracking-widest uppercase text-white/30 bg-[#050505]">
         <p>
-          &copy; {new Date().getFullYear()} Ramen Ichizu Bar. All Rights Reserved.
+          &copy; {new Date().getFullYear()} Ramen Ichizu &amp; Bar. All Rights Reserved.
           <span aria-hidden="true"> · </span>
           <a href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</a>
         </p>

@@ -14,12 +14,18 @@ export default function Home() {
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 1000], [0, 300]);
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [shouldLoadBelowFold, setShouldLoadBelowFold] = useState(false);
   const [belowFoldReady, setBelowFoldReady] = useState(false);
   const [pendingNavTarget, setPendingNavTarget] = useState<string | null>(null);
 
   const handleBelowFoldReady = useCallback(() => setBelowFoldReady(true), []);
+
+  useEffect(() => {
+    setIsScrolled(scrollY.get() > 40);
+    return scrollY.on('change', (latest) => setIsScrolled(latest > 40));
+  }, [scrollY]);
 
   useEffect(() => {
     const threshold = Math.min(window.innerHeight * 0.15, 120);
@@ -91,7 +97,7 @@ export default function Home() {
     <div className="bg-background min-h-screen text-foreground overflow-hidden selection:bg-white/20 selection:text-white">
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 mix-blend-difference text-white">
+      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 text-white ${isScrolled ? 'bg-background/90 backdrop-blur-md' : 'mix-blend-difference'}`}>
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('hero')}>
           <Logo className="w-8 h-8" />
           <span className="font-serif tracking-widest text-sm uppercase hidden sm:block">Ichizu</span>

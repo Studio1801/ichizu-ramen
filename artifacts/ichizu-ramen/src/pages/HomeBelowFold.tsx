@@ -142,8 +142,8 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
 
         <div className="grid md:grid-cols-2 gap-x-24 gap-y-20">
           <div className="space-y-16">
-            <MenuCategory title="Ramen" items={menuData.ramen} />
-            <MenuCategory title="Seasonal" items={menuData.seasonal} />
+            <MenuCategory title="Ramen" items={menuData.ramen} featured />
+            <MenuCategory title="Seasonal" items={menuData.seasonal} featured />
 
             <FadeIn delay={0.2}>
               <div className="relative aspect-square w-full mt-12">
@@ -158,7 +158,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             <MenuCategory title="Add-Ons" items={menuData.addons} compact />
             <MenuCategory title="Mini Donburi" items={menuData.donburi} />
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <MenuCategory title="Dessert" items={menuData.dessert} compact />
               <MenuCategory title="Draft Beer" items={menuData.beer} compact />
             </div>
@@ -231,7 +231,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
   );
 }
 
-function MenuCategory({ title, items, compact = false }: { title: string; items: any[]; compact?: boolean }) {
+function MenuCategory({ title, items, compact = false, featured = false }: { title: string; items: any[]; compact?: boolean; featured?: boolean }) {
   return (
     <FadeIn>
       <div className="mb-10 group">
@@ -244,9 +244,17 @@ function MenuCategory({ title, items, compact = false }: { title: string; items:
         </h3>
         <div className="space-y-6">
           {items.map((item, i) => (
-            <div key={i} className="flex flex-col">
-              <div className="flex justify-between items-baseline font-sans text-sm md:text-base">
-                <span className="font-medium tracking-wide text-white/90">{item.name}</span>
+            <div key={i} className="flex flex-col group/menu-item">
+              <div className="flex items-baseline font-sans text-sm md:text-base">
+                <div className="flex min-w-0 items-baseline">
+                  <span className={`font-medium tracking-wide text-white/90 transition-colors duration-300 group-hover/menu-item:text-white ${featured ? 'font-serif text-lg md:text-xl' : ''}`}>
+                    {item.name}
+                  </span>
+                  {item.note && (
+                    <span className="ml-2 text-[10px] italic lowercase text-red-400/70">{item.note}</span>
+                  )}
+                </div>
+                <div aria-hidden="true" className="mx-2 min-w-3 flex-1 self-baseline border-b border-dotted border-white/15 transition-colors duration-300 group-hover/menu-item:border-white/30" />
                 <span className="text-white/60 tabular-nums">${item.price}</span>
               </div>
               {!compact && item.desc && (

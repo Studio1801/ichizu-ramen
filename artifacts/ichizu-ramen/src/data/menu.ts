@@ -1,8 +1,8 @@
 export const menuData = {
   ramen: [
-    { name: "Triple Threat Shoyu", price: 18, desc: "Our signature blend of three distinct soy sauces, clear amber broth, chashu, ajitama, menma, scallion." },
+    { name: "Triple Threat Shoyu", price: 18, note: "signature", desc: "Our signature blend of three distinct soy sauces, clear amber broth, chashu, ajitama, menma, scallion." },
     { name: "Triple Threat Shio", price: 18, desc: "A delicate, complex salt-based broth highlighting the pure essence of the ingredients. Chashu, ajitama, menma." },
-    { name: "TanTan", price: 18, desc: "Rich, nutty sesame broth with a spicy kick, topped with spiced ground pork, chili oil, and bok choy." },
+    { name: "TanTan", price: 18, note: "spicy", desc: "Rich, nutty sesame broth with a spicy kick, topped with spiced ground pork, chili oil, and bok choy." },
     { name: "Wontonmen", price: 20, desc: "Our classic shoyu broth enhanced with house-made pork and shrimp wontons." },
     { name: "Tokusei Shoyu", price: 22, desc: "The ultimate bowl. All toppings included: extra chashu, extra ajitama, wontons, menma, and nori." },
   ],

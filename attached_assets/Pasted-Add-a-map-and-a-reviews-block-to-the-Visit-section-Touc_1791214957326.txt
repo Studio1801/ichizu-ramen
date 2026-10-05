@@ -1,0 +1,15 @@
+Add a map and a reviews block to the Visit section. Touch nothing else. No new dependencies.
+
+1. Map: in HomeBelowFold.tsx, below the Location/Hours/Connect columns inside the Visit section, add a full-width map (max-w-4xl, centered, mt-20), height h-72 md:h-96:
+   <iframe src="https://www.google.com/maps?q=915+Washington+St+Salt+Lake+City+UT+84101&output=embed" title="Map showing Ramen Ichizu & Bar at 915 Washington St, Salt Lake City" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full h-full border-0" style={{ filter: 'invert(92%) hue-rotate(180deg) contrast(0.9) saturate(0.6)' }} />
+   Under it, a centered text link "Get directions" (underline underline-offset-4 decoration-white/30 hover:decoration-white) to https://www.google.com/maps/dir/?api=1&destination=915+Washington+St+Salt+Lake+City+UT+84101 opening in a new tab with rel="noreferrer".
+
+2. Reviews block, directly below the map (mt-24, centered):
+   - A very large serif "4.4" (text-7xl md:text-8xl font-serif), then a row of 5 small inline SVG stars filled to 4.4 (use a clip or gradient for the partial fifth), in a warm muted gold (no purple or blue).
+   - Below: "from 460+ Google reviews" in muted text, then a text link "Read reviews on Google" to https://www.google.com/maps/search/?api=1&query=Ramen+Ichizu+%26+Bar+915+Washington+St+Salt+Lake+City+UT, new tab, same underline style as the directions link.
+   - Remove the existing "4.4/5 on Google (460+ Reviews)" line from the Connect column so it is not shown twice. Keep the Instagram link there.
+   - Create src/data/reviews.ts exporting `export const reviews: { quote: string; name: string }[] = [];` (empty). If the array has items, render them below the rating in two columns on md+ (one on mobile): quote in font-serif italic text-lg text-white/80, name beneath in small muted text. No cards, no borders, no left stripes, no quote-mark icons. If the array is empty, render nothing for this part.
+
+3. In src/pages/privacy.tsx, in the Third-party links section, add one sentence: "The map on this site is provided by Google Maps, which may set cookies and receive your IP address when it loads." Also update the "Last updated" date to today.
+
+Run the build, then commit and push to main.

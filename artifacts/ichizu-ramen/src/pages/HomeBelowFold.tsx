@@ -183,9 +183,15 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             <FadeIn delay={0.1}>
               <h4 className="font-serif text-xl mb-4">Location</h4>
               <p className="text-muted-foreground leading-relaxed">
-                915 Washington St<br />
-                Suite #1A<br />
-                Salt Lake City, UT 84101<br />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=915+Washington+St+Salt+Lake+City+UT+84101"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  915 Washington St<br />
+                  Suite #1A<br />
+                  Salt Lake City, UT 84101
+                </a><br />
                 <span className="text-white/40 mt-2 block">Central Ninth Neighborhood</span>
               </p>
             </FadeIn>

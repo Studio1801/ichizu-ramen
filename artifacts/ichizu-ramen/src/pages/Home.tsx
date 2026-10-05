@@ -169,7 +169,8 @@ export default function Home() {
         <div className="relative z-20 text-center flex flex-col items-center">
           <div className="relative">
             <h1 className="text-8xl md:text-[12rem] font-serif leading-none tracking-tight text-white/90 font-light mb-4 flex items-center gap-4 drop-shadow-2xl">
-              一途
+              <span aria-hidden="true">一途</span>
+              <span className="sr-only">Ramen Ichizu Bar, Japanese ramen in Salt Lake City</span>
             </h1>
           </div>
           <FadeIn delay={0.4} direction="up">

@@ -1,4 +1,4 @@
-const CONTACT_EMAIL = "PUT_REAL_EMAIL_HERE";
+const CONTACT_EMAIL = "Michael.Harrison@gmail.com";
 
 import { useEffect } from 'react';
 

@@ -4,6 +4,7 @@ import { FadeIn } from '@/components/ui/fade-in';
 import { Logo } from '@/components/Logo';
 import { menuData } from '@/data/menu';
 import { reviews } from '@/data/reviews';
+import { track } from '@/lib/track';
 
 import woodBg from '@/assets/wood-bg.webp';
 import atmosphereImg from '@/assets/real/interior-c.jpg';
@@ -187,6 +188,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             href="https://www.google.com/maps/dir/?api=1&destination=915+Washington+St+Salt+Lake+City+UT+84101"
             target="_blank"
             rel="noreferrer"
+            onClick={() => track('directions_click')}
             className="mt-4 inline-block py-2 md:py-0 underline underline-offset-4 decoration-white/30 hover:decoration-white"
           >
             Get directions
@@ -219,6 +221,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             href="https://www.google.com/maps/search/?api=1&query=Ramen+Ichizu+%26+Bar+915+Washington+St+Salt+Lake+City+UT"
             target="_blank"
             rel="noreferrer"
+            onClick={() => track('reviews_click')}
             className="mt-2 inline-block py-2 md:py-0 underline underline-offset-4 decoration-white/30 hover:decoration-white"
           >
             Read reviews on Google
@@ -249,6 +252,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
                   href="https://www.google.com/maps/search/?api=1&query=915+Washington+St+Salt+Lake+City+UT+84101"
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => track('address_click')}
                   className="inline-block py-1 md:inline md:py-0 underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
                 >
                   915 Washington St<br />
@@ -275,6 +279,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
                 href="https://www.instagram.com/ramen_ichizu/"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => track('instagram_click')}
                 className="inline-block py-1 md:inline-flex md:py-0 items-center gap-2 text-white border-b border-white/20 pb-1 hover:border-white transition-colors"
               >
                 @ramen_ichizu

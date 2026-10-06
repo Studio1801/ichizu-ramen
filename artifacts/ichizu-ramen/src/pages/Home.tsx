@@ -4,6 +4,7 @@ import * as m from 'framer-motion/m';
 import { Menu as MenuIcon, X as CloseIcon } from 'lucide-react';
 import { FadeIn } from '@/components/ui/fade-in';
 import { Logo } from '@/components/Logo';
+import { track } from '@/lib/track';
 
 import heroImg from '@/assets/real/hero-new.jpg';
 import heroVideo from '@/assets/hero.mp4';
@@ -111,7 +112,10 @@ export default function Home() {
             </button>
           ))}
           <button
-            onClick={() => scrollTo('visit')}
+            onClick={() => {
+              track('reserve_click', { placement: 'nav' });
+              scrollTo('visit');
+            }}
             className="border border-white/40 rounded-full px-4 py-1.5 normal-case tracking-normal font-sans text-xs hover:bg-white hover:text-black transition-colors"
           >
             Reserve
@@ -121,7 +125,10 @@ export default function Home() {
         {/* Mobile controls (below sm): Reserve button + hamburger toggle */}
         <div className="flex sm:hidden items-center gap-3 text-xs tracking-widest uppercase font-sans">
           <button
-            onClick={() => scrollTo('visit')}
+            onClick={() => {
+              track('reserve_click', { placement: 'mobile_menu' });
+              scrollTo('visit');
+            }}
             className="border border-white/40 rounded-full px-3 py-1.5 normal-case tracking-normal font-sans text-xs hover:bg-white hover:text-black transition-colors"
           >
             Reserve

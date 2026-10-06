@@ -28,7 +28,7 @@ export default function Privacy() {
             <h2 className="mb-2 font-serif text-2xl text-white">Analytics</h2>
             <p>
               We use Google Analytics 4 to measure visits to this site, including pages viewed,
-              device and browser type, approximate location, and how people found the site.
+              device and browser type, approximate location, how people found the site, and which buttons and links are tapped.
               Google Analytics sets cookies and receives this data. We do not sell personal
               information.
             </p>
@@ -78,7 +78,7 @@ export default function Privacy() {
             </p>
           </section>
 
-          <p className="text-sm text-white/50">Last updated: October 5, 2026</p>
+          <p className="text-sm text-white/50">Last updated: October 6, 2026</p>
         </div>
       </article>
     </main>

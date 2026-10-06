@@ -172,54 +172,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
 
       {/* Hours & Location */}
       <section id="visit" className="py-32 px-6 border-t border-white/5 bg-[#050505]">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <Logo className="w-16 h-16 mx-auto mb-12 text-white/80" />
-          </FadeIn>
-
-          <div className="grid md:grid-cols-3 gap-12 font-sans text-sm">
-            <FadeIn delay={0.1}>
-              <h4 className="font-serif text-xl mb-4">Location</h4>
-              <p className="text-muted-foreground leading-relaxed">
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=915+Washington+St+Salt+Lake+City+UT+84101"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
-                >
-                  915 Washington St<br />
-                  Suite #1A<br />
-                  Salt Lake City, UT 84101
-                </a><br />
-                <span className="text-white/40 mt-2 block">Central Ninth Neighborhood</span>
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <h4 className="font-serif text-xl mb-4">Hours</h4>
-              <ul className="text-muted-foreground space-y-2">
-                <li><span className="text-white/60">Mon, Wed, Thu</span><br />12PM–2:30PM / 5PM–9PM</li>
-                <li><span className="text-white/60">Tue</span><br />12PM–2:30PM (lunch only)</li>
-                <li><span className="text-white/60">Fri–Sat</span><br />12PM–12AM</li>
-                <li><span className="text-white/60">Sun</span><br />12PM–9PM</li>
-              </ul>
-            </FadeIn>
-
-            <FadeIn delay={0.3}>
-              <h4 className="font-serif text-xl mb-4">Connect</h4>
-              <a
-                href="https://www.instagram.com/ramen_ichizu/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-white border-b border-white/20 pb-1 hover:border-white transition-colors"
-              >
-                @ramen_ichizu
-              </a>
-            </FadeIn>
-          </div>
-        </div>
-
-        <div className="mx-auto mt-20 w-full max-w-4xl text-center">
+        <div className="mx-auto mt-0 w-full max-w-4xl text-center">
           <div className="h-72 md:h-96">
             <iframe
               src="https://www.google.com/maps?q=915+Washington+St+Salt+Lake+City+UT+84101&output=embed"
@@ -281,6 +234,53 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
               ))}
             </div>
           )}
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center mt-32">
+          <FadeIn>
+            <Logo className="w-16 h-16 mx-auto mb-12 text-white/80" />
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-12 font-sans text-sm">
+            <FadeIn delay={0.1}>
+              <h4 className="font-serif text-xl mb-4">Location</h4>
+              <p className="text-muted-foreground leading-relaxed">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=915+Washington+St+Salt+Lake+City+UT+84101"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
+                >
+                  915 Washington St<br />
+                  Suite #1A<br />
+                  Salt Lake City, UT 84101
+                </a><br />
+                <span className="text-white/40 mt-2 block">Central Ninth Neighborhood</span>
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <h4 className="font-serif text-xl mb-4">Hours</h4>
+              <ul className="text-muted-foreground space-y-2">
+                <li><span className="text-white/60">Mon, Wed, Thu</span><br />12PM–2:30PM / 5PM–9PM</li>
+                <li><span className="text-white/60">Tue</span><br />12PM–2:30PM (lunch only)</li>
+                <li><span className="text-white/60">Fri–Sat</span><br />12PM–12AM</li>
+                <li><span className="text-white/60">Sun</span><br />12PM–9PM</li>
+              </ul>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <h4 className="font-serif text-xl mb-4">Connect</h4>
+              <a
+                href="https://www.instagram.com/ramen_ichizu/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-white border-b border-white/20 pb-1 hover:border-white transition-colors"
+              >
+                @ramen_ichizu
+              </a>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

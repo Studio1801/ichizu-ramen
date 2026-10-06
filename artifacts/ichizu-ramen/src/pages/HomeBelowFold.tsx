@@ -32,7 +32,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
   return (
     <>
       {/* Philosophy Section */}
-      <section id="philosophy" className="py-32 px-6 relative overflow-hidden">
+      <section id="philosophy" className="py-20 md:py-32 px-6 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={woodBg} alt="" className="w-full h-full object-cover" aria-hidden="true" />
           <div className="absolute inset-0 bg-black/80" />
@@ -67,7 +67,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
       </section>
 
       {/* The Chef Section */}
-      <section className="py-32 px-6 bg-[#080808]">
+      <section className="py-20 md:py-32 px-6 bg-[#080808]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row-reverse gap-16 items-center">
           <div className="flex-1">
             <FadeIn>
@@ -102,8 +102,8 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-32 px-6 max-w-6xl mx-auto">
-        <FadeIn className="text-center mb-20">
+      <section id="gallery" className="py-20 md:py-32 px-6 max-w-6xl mx-auto">
+        <FadeIn className="text-center mb-12 md:mb-20">
           <h2 className="text-5xl font-serif mb-4">Gallery</h2>
           <div className="w-8 h-[1px] bg-white/20 mx-auto" />
         </FadeIn>
@@ -135,8 +135,8 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="py-32 px-6 max-w-5xl md:max-w-6xl mx-auto">
-        <FadeIn className="text-center mb-24">
+      <section id="menu" className="py-20 md:py-32 px-6 max-w-5xl md:max-w-6xl mx-auto">
+        <FadeIn className="text-center mb-14 md:mb-24">
           <h2 className="text-5xl font-serif mb-4">The Menu</h2>
           <p className="hidden md:block text-center font-serif italic text-white/50 md:text-lg mb-3">
             Noodles made in-house daily.
@@ -144,7 +144,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
           <div className="w-8 h-[1px] bg-white/20 mx-auto" />
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-x-24 md:gap-x-28 gap-y-20">
+        <div className="grid md:grid-cols-2 gap-x-24 md:gap-x-28 gap-y-14 md:gap-y-20">
           <div className="space-y-16">
             <MenuCategory title="Ramen" items={menuData.ramen} featured />
             <MenuCategory title="Seasonal" items={menuData.seasonal} featured />
@@ -171,7 +171,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
       </section>
 
       {/* Hours & Location */}
-      <section id="visit" className="py-32 px-6 border-t border-white/5 bg-[#050505]">
+      <section id="visit" className="py-20 md:py-32 px-6 border-t border-white/5 bg-[#050505]">
         <div className="mx-auto mt-0 w-full max-w-4xl text-center">
           <div className="h-72 md:h-96">
             <iframe
@@ -187,13 +187,13 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             href="https://www.google.com/maps/dir/?api=1&destination=915+Washington+St+Salt+Lake+City+UT+84101"
             target="_blank"
             rel="noreferrer"
-            className="mt-4 inline-block underline underline-offset-4 decoration-white/30 hover:decoration-white"
+            className="mt-4 inline-block py-2 md:py-0 underline underline-offset-4 decoration-white/30 hover:decoration-white"
           >
             Get directions
           </a>
         </div>
 
-        <div className="mx-auto mt-24 max-w-4xl text-center">
+        <div className="mx-auto mt-16 md:mt-24 max-w-4xl text-center">
           <p className="font-serif text-7xl md:text-8xl">4.4</p>
           <div className="mt-3 flex justify-center gap-1" role="img" aria-label="4.4 out of 5 stars">
             {Array.from({ length: 5 }, (_, index) => (
@@ -219,7 +219,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             href="https://www.google.com/maps/search/?api=1&query=Ramen+Ichizu+%26+Bar+915+Washington+St+Salt+Lake+City+UT"
             target="_blank"
             rel="noreferrer"
-            className="mt-2 inline-block underline underline-offset-4 decoration-white/30 hover:decoration-white"
+            className="mt-2 inline-block py-2 md:py-0 underline underline-offset-4 decoration-white/30 hover:decoration-white"
           >
             Read reviews on Google
           </a>
@@ -236,7 +236,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
           )}
         </div>
 
-        <div className="max-w-4xl mx-auto text-center mt-32">
+        <div className="max-w-4xl mx-auto text-center mt-20 md:mt-32">
           <FadeIn>
             <Logo className="w-16 h-16 mx-auto mb-12 text-white/80" />
           </FadeIn>
@@ -249,7 +249,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
                   href="https://www.google.com/maps/search/?api=1&query=915+Washington+St+Salt+Lake+City+UT+84101"
                   target="_blank"
                   rel="noreferrer"
-                  className="underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
+                  className="inline-block py-1 md:inline md:py-0 underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
                 >
                   915 Washington St<br />
                   Suite #1A<br />
@@ -275,7 +275,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
                 href="https://www.instagram.com/ramen_ichizu/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-white border-b border-white/20 pb-1 hover:border-white transition-colors"
+                className="inline-block py-1 md:inline-flex md:py-0 items-center gap-2 text-white border-b border-white/20 pb-1 hover:border-white transition-colors"
               >
                 @ramen_ichizu
               </a>
@@ -285,11 +285,12 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 text-center text-xs font-sans tracking-widest uppercase text-white/30 bg-[#050505]">
-        <p>
+      <footer className="py-8 text-center text-xs font-sans bg-[#050505]">
+        <p className="tracking-wide text-white/50 md:tracking-widest md:uppercase md:text-white/30">
           &copy; {new Date().getFullYear()} Ramen Ichizu &amp; Bar. All Rights Reserved.
-          <span aria-hidden="true"> · </span>
-          <a href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</a>
+          <span aria-hidden="true" className="hidden md:inline"> · </span>
+          <br className="md:hidden" />
+          <a href="/privacy" className="inline-block py-2 md:inline md:py-0 hover:text-white/60 transition-colors">Privacy Policy</a>
         </p>
       </footer>
     </>
@@ -323,7 +324,7 @@ function MenuCategory({ title, items, compact = false, featured = false }: { tit
                 <span className={`text-white/60 tabular-nums ${featured ? 'md:font-serif md:text-xl' : ''}`}>${item.price}</span>
               </div>
               {!compact && item.desc && (
-                <p className="text-xs md:text-[15px] text-muted-foreground mt-2 leading-relaxed max-w-[85%] md:max-w-[92%] md:transition-colors md:duration-300 md:group-hover/menu-item:text-white/70">
+                <p className="text-[13px] md:text-[15px] text-muted-foreground mt-2 leading-relaxed max-w-[85%] md:max-w-[92%] md:transition-colors md:duration-300 md:group-hover/menu-item:text-white/70">
                   {item.desc}
                 </p>
               )}

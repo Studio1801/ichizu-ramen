@@ -4,7 +4,7 @@ import { FadeIn } from '@/components/ui/fade-in';
 import { Logo } from '@/components/Logo';
 import { menuData } from '@/data/menu';
 import { reviews } from '@/data/reviews';
-import { track } from '@/lib/track';
+import { trackLink } from '@/lib/track';
 
 import woodBg from '@/assets/wood-bg.webp';
 import atmosphereImg from '@/assets/real/interior-c.jpg';
@@ -42,21 +42,22 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
           <div>
             <FadeIn>
               <h2 className="text-3xl md:text-5xl font-serif mb-8 leading-tight">
-                No substitutions.<br />
-                No takeout.
+                Our Story
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <div className="space-y-6 font-sans text-muted-foreground leading-relaxed text-sm md:text-base">
                 <p>
-                  "Ichizu" translates to single-minded devotion. It is the philosophy that drives every decision in this room.
+                  I didn't come from the restaurant industry. Ramen Ichizu started as a passion project. Once I decided to pursue it, I became obsessed with Japanese soul food.
                 </p>
                 <p>
-                  Our noodles are crafted in-house daily. The broth simmers for hours to achieve the perfect balance of clarity and depth. Every bowl is constructed with obsessive precision.
+                  That pursuit of constant learning is what defines Ichizu. The name Ichizu (一途) reflects single-minded devotion to one path. For us, that means continually refining our ramen, food, hospitality, and the experience we create.
                 </p>
                 <p>
-                  To respect the craft and the integrity of the dish, we do not alter our recipes. The ramen is served exactly as intended, and meant to be consumed immediately.
+                  The goal has never been to build the biggest ramen shop.
                 </p>
+                <p className="text-foreground">The goal is to build one of the best.</p>
+                <p className="text-sm">Mike Harrison, Founder</p>
               </div>
             </FadeIn>
           </div>
@@ -78,10 +79,10 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             <FadeIn delay={0.2}>
               <div className="space-y-6 font-sans text-muted-foreground leading-relaxed">
                 <p>
-                  Studied at the prestigious Rajuku Ramen School in Tokyo under the watchful eye of Master Chef Takeshi Koitani.
+                  My first ramen training came from Keizo Shimamoto of Ramen Shack, who taught me how to make noodles from scratch. I later traveled to Tokyo to train under Chef Takeshi Koitani of Jiraigen and Rajuku, and staged with Chef Daisuke Watanabe of Ramen Feel.
                 </p>
                 <p>
-                  Following a successful tenure at Hana Ramen Bar in Park City, Chef Harrison brought his discipline to Salt Lake City's Central Ninth neighborhood, opening a late-night counter dedicated purely to the art of the bowl.
+                  I then brought Koitani, Watanabe, and Takuro Yanase of Ramen Break Beats to Salt Lake City for pop-ups and hands-on training with our team. As we expanded into izakaya yakitori, we also brought in Yakitori Guy to train our staff.
                 </p>
               </div>
             </FadeIn>
@@ -139,11 +140,16 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
       <section id="menu" className="py-20 md:py-32 px-6 max-w-5xl md:max-w-6xl mx-auto">
         <FadeIn className="text-center mb-14 md:mb-24">
           <h2 className="text-5xl font-serif mb-4">The Menu</h2>
-          <p className="hidden md:block text-center font-serif italic text-white/50 md:text-lg mb-3">
-            Noodles made in-house daily.
-          </p>
           <div className="w-8 h-[1px] bg-white/20 mx-auto" />
         </FadeIn>
+
+        <div className="mx-auto mb-14 max-w-3xl space-y-5 font-sans text-base leading-relaxed text-muted-foreground md:mb-24">
+          <p>Rooted in the shokunin spirit, a lifelong devotion to mastering one's craft, Ramen Ichizu is a love letter to Japanese soul food.</p>
+          <p>We believe the smallest details matter. Our broths, tare, aroma oils, noodles, wonton skins, toppings, and sauces are made in-house from scratch, with technique and intention behind every component.</p>
+          <p>We source pasture-raised local meats, seasonal produce, premium Hokkaido flour, and carefully selected ingredients from Japan, bringing together Japanese tradition and the best of what Utah has to offer.</p>
+          <p>From ramen and handmade gyoza to yakitori and modern izakaya dishes, our menu is constantly evolving.</p>
+          <p className="text-foreground">100% house-made. Never stop refining.</p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-x-24 md:gap-x-28 gap-y-14 md:gap-y-20">
           <div className="space-y-16">
@@ -188,7 +194,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             href="https://www.google.com/maps/dir/?api=1&destination=915+Washington+St+Salt+Lake+City+UT+84101"
             target="_blank"
             rel="noreferrer"
-            onClick={() => track('directions_click')}
+            onClick={(event) => trackLink('directions_click', event.currentTarget)}
             className="mt-4 inline-block py-2 md:py-0 underline underline-offset-4 decoration-white/30 hover:decoration-white"
           >
             Get directions
@@ -221,7 +227,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             href="https://www.google.com/maps/search/?api=1&query=Ramen+Ichizu+%26+Bar+915+Washington+St+Salt+Lake+City+UT"
             target="_blank"
             rel="noreferrer"
-            onClick={() => track('reviews_click')}
+            onClick={(event) => trackLink('reviews_click', event.currentTarget)}
             className="mt-2 inline-block py-2 md:py-0 underline underline-offset-4 decoration-white/30 hover:decoration-white"
           >
             Read reviews on Google
@@ -252,7 +258,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
                   href="https://www.google.com/maps/search/?api=1&query=915+Washington+St+Salt+Lake+City+UT+84101"
                   target="_blank"
                   rel="noreferrer"
-                  onClick={() => track('address_click')}
+                  onClick={(event) => trackLink('directions_click', event.currentTarget)}
                   className="inline-block py-1 md:inline md:py-0 underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
                 >
                   915 Washington St<br />
@@ -266,10 +272,10 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
             <FadeIn delay={0.2}>
               <h4 className="font-serif text-xl mb-4">Hours</h4>
               <ul className="text-muted-foreground space-y-2">
-                <li><span className="text-white/60">Mon, Wed, Thu</span><br />12PM–2:30PM / 5PM–9PM</li>
-                <li><span className="text-white/60">Tue</span><br />12PM–2:30PM (lunch only)</li>
-                <li><span className="text-white/60">Fri–Sat</span><br />12PM–12AM</li>
-                <li><span className="text-white/60">Sun</span><br />12PM–9PM</li>
+                <li><span className="text-white/60">Mon, Wed, Thu</span><br />12PM-2:30PM / 5PM-9PM</li>
+                <li><span className="text-white/60">Tue</span><br />12PM-2:30PM (lunch only)</li>
+                <li><span className="text-white/60">Fri-Sat</span><br />12PM-12AM</li>
+                <li><span className="text-white/60">Sun</span><br />12PM-9PM</li>
               </ul>
             </FadeIn>
 
@@ -279,7 +285,7 @@ export default function HomeBelowFold({ onReady }: HomeBelowFoldProps) {
                 href="https://www.instagram.com/ramen_ichizu/"
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => track('instagram_click')}
+                onClick={(event) => trackLink('instagram_click', event.currentTarget)}
                 className="inline-block py-1 md:inline-flex md:py-0 items-center gap-2 text-white border-b border-white/20 pb-1 hover:border-white transition-colors"
               >
                 @ramen_ichizu

@@ -101,7 +101,6 @@ export default function Home() {
     { id: 'philosophy', label: 'Devotion' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'menu', label: 'Menu' },
-    { id: 'visit', label: 'Visit' },
   ];
 
   return (

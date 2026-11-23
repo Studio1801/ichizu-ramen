@@ -32,6 +32,7 @@ test('missing or blocked analytics cannot break an interaction', () => {
 
 test('navigation never claims a reservation or fires unsupported events', () => {
   assert.equal((home.match(/Visit Us/g) || []).length, 2);
+  assert.doesNotMatch(home, /label: 'Visit'/);
   assert.doesNotMatch(home + below, /reserve_click|reservation_click|order_online_click|phone_click/);
   assert.doesNotMatch(below, /addEventListener/);
   assert.equal((below.match(/trackLink\('directions_click'/g) || []).length, 2);

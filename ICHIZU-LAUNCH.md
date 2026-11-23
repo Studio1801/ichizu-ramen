@@ -31,7 +31,9 @@ This working copy is a prelaunch preview. Do not publish it as the final website
 ## Verification still required outside this source copy
 
 - Check current GBP information and the latest client menu source against the existing hours, phone, dishes, and prices. Menu data and hours were deliberately preserved, not certified current.
-- No verified working reservation destination is available. A discovered Toast page did not establish working ramen ordering, so no ordering button has been added.
+- The August agreement includes a Resy button. No verified Ichizu Resy destination was found in the connected email history or public search. This remains an outstanding scope item, not a cancelled requirement. Visit Us is an honest interim navigation action. A discovered Toast page did not establish working ramen ordering, so no ordering button has been added.
+- The agreement includes public phone/contact details; the current homepage does not show a phone link. Verify the current public contact details before completing that scope item.
+- Mike supplied the story and menu introduction in the August 26 and 27 messages quoted in the email thread. No explicit photo placement, gallery captions, or individual image approval was found in the accessible correspondence. Preserve current media without claiming client approval or verified provenance.
 - Review the existing privacy contact before launch. No new contact address or policy promise was invented.
 - Domain delegation, GA4 admin settings, Search Console, Vercel account settings, backups, and monitoring cannot be confirmed by a source build alone.
 - Official reporting begins with the first full calendar month after final-domain launch. Exclude development traffic.
